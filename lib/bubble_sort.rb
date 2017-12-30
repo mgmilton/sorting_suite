@@ -27,17 +27,12 @@ class BubbleSort
   end
 
   def array_error_raiser(list_array)
-  element_classes = list_array.map do |item|
-    item.class
+    element_classes = list_array.map do |item|
+      item.class
+    end
+    if element_classes.uniq.length != 1
+      raise ArrayError
+    end
   end
-  if element_classes.uniq.length != 1
-    raise ArrayError
-  end
-end
-
 
 end
-
-
-sorter = BubbleSort.new
-p sorter.sort([1,2,3,203,44,5])
