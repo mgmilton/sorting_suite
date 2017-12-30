@@ -5,7 +5,19 @@ class BubbleSort
   def sort(list)
     argument_raiser(list)
     array_error_raiser(list)
-    list.sort
+    return list if list.length <= 1
+    1.upto(list.length-1) do |i|
+      1.upto(list.length-i) do |j|
+        list_rearranger(list, i, j)
+      end
+    end
+  list
+  end
+
+  def list_rearranger(list, i, j)
+    if list[j-1] > list[j]
+      list[j-1], list[j] = list[j], list[j-1]
+    end
   end
 
   def argument_raiser(data, desired_datatype = Array)
@@ -15,15 +27,17 @@ class BubbleSort
   end
 
   def array_error_raiser(list_array)
-    element_classes = list_array.map do |item|
-      item.class
-    end
-    if element_classes.uniq.length != 1
-      raise ArrayError
-    end
+  element_classes = list_array.map do |item|
+    item.class
+  end
+  if element_classes.uniq.length != 1
+    raise ArrayError
   end
 end
 
 
+end
+
+
 sorter = BubbleSort.new
-sorter.sort([1,2,33,4])
+p sorter.sort([1,2,3,203,44,5])
