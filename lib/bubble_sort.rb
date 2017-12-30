@@ -3,8 +3,7 @@ class BubbleSort
   ArrayError = "All elements of your array must be the same class for this algorithm to work"
 
   def sort(list)
-    argument_raiser(list)
-    array_error_raiser(list)
+    argument_and_array_checker(list)
     return list if list.length <= 1
     1.upto(list.length-1) do |i|
       1.upto(list.length-i) do |j|
@@ -18,6 +17,11 @@ class BubbleSort
     if list[j-1] > list[j]
       list[j-1], list[j] = list[j], list[j-1]
     end
+  end
+
+  def argument_and_array_checker(list)
+    argument_raiser(list)
+    array_error_raiser(list)
   end
 
   def argument_raiser(data, desired_datatype = Array)

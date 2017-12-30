@@ -1,8 +1,10 @@
 class InsertionSort
+  
   ArrayError = "All elements of your array must be the same class for this algorithm to work"
 
   def sort(list, i = 1)
     argument_and_array_checker(list)
+    return list if list.length <= 1
     insertion_starter(list, i)
     list
   end
