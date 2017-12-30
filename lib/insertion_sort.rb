@@ -1,5 +1,5 @@
 class InsertionSort
-  
+
   ArrayError = "All elements of your array must be the same class for this algorithm to work"
 
   def sort(list, i = 1)
@@ -47,5 +47,4 @@ class InsertionSort
       raise ArrayError
     end
   end
-
 end

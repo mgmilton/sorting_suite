@@ -38,5 +38,4 @@ class BubbleSort
       raise ArrayError
     end
   end
-
 end
