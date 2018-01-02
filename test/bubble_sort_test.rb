@@ -15,6 +15,10 @@ class BubbleSortTest < MiniTest::Test
     assert_equal ["a","b","c","d"], @sorter.sort(["d", "b", "a", "c"])
   end
 
+  def test_sort_returns_array
+    assert_equal Array, @sorter.sort(["d","b"]).class
+  end
+
   def test_sort_only_accepts_arrays
     assert_raises ArgumentError do
       @sorter.sort("d")
